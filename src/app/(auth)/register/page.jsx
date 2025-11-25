@@ -162,7 +162,7 @@ export default function Registration() {
             </div>
             <p className="text-center text-gray-500 text-sm mt-6">
               Already have an account?{" "}
-              <Link href="/Login" className="text-blue-500 hover:underline">
+              <Link href="login" className="text-blue-500 hover:underline">
                 Log In
               </Link>
             </p>

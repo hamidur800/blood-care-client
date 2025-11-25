@@ -17,7 +17,10 @@ export default function Navber() {
         <Link href="/alldoners">All Donors</Link>
       </li>
       <li>
-        <Link href="/alldoner">Add Donor</Link>
+        <Link href="/adddoners">Add Donor</Link>
+      </li>
+      <li>
+        <Link href="/doner-list">Doner List</Link>
       </li>
     </>
   );
@@ -88,8 +91,12 @@ export default function Navber() {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 shadow"
             >
-              <li className="px-3 py-2 font-semibold">{user?.displayName}</li>
-              <li className="px-3 py-2 text-gray-500">{user?.email}</li>
+              <li>
+                <Link href="adddoners">Add Doner</Link>
+              </li>
+              <li>
+                <Link href="doner-list">My Doner List</Link>
+              </li>
 
               <li>
                 <button
