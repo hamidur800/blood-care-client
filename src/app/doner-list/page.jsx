@@ -4,7 +4,7 @@ import { AuthContext } from "@/Provider/AuthProvider";
 import React, { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
-export default function DonerList() {
+export default function page() {
   const { user } = useContext(AuthContext);
   const [doners, setDoners] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -28,7 +28,9 @@ export default function DonerList() {
     }
 
     // fetch donors for this user
-    fetch(`http://localhost:3001/doners?addedByEmail=${user.email}`)
+    fetch(
+      `https://blood-care-server-nine.vercel.app/doners?addedByEmail=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setDoners(data);

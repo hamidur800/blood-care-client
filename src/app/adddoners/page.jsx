@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 import { AuthContext } from "@/Provider/AuthProvider";
+import Link from "next/link";
 
 export default function AddDoner() {
   const { user } = useContext(AuthContext);
@@ -23,7 +24,7 @@ export default function AddDoner() {
       createdAt: new Date(),
     };
 
-    fetch("http://localhost:3001/doners", {
+    fetch("https://blood-care-server-nine.vercel.app/doners", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(donerData),
@@ -46,11 +47,17 @@ export default function AddDoner() {
 
   if (!user) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex flex-col items-center justify-center">
         {" "}
         <p className="text-center text-red-500 text-lg">
           You must be logged in to add a doner.{" "}
         </p>{" "}
+        <Link
+          href="/login"
+          className="btn ml-2 text-white bg-blue-500 underline"
+        >
+          Please Loged In
+        </Link>
       </div>
     );
   }

@@ -41,7 +41,7 @@ export default function AllDoners() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3001/doners/${id}`, {
+        fetch(`https://blood-care-server-nine.vercel.app//doners/${id}`, {
           // <-- use the id parameter
           method: "DELETE",
         })
@@ -100,9 +100,10 @@ export default function AllDoners() {
                       </span>{" "}
                       {doner.addedBy}
                     </p>
-
+                  </div>
+                  <div className="flex flex-col gap-2 mt-2">
                     <Link
-                      href={`/property/${doner._id}`}
+                      href={`doner-details/${doner._id}`}
                       className="btn btn-sm btn-primary text-white"
                     >
                       View Details
@@ -115,9 +116,6 @@ export default function AllDoners() {
                       Delete
                     </button>
                   </div>
-                  <p className="mt-2 text-sm text-gray-600">
-                    Posted by: {doner.name || "Unknown"}
-                  </p>
                 </div>
               </div>
             ))}

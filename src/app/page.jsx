@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 export default function Home() {
   const [doners, setDoners] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3001/doners")
+    fetch("https://blood-care-server-nine.vercel.app/doners")
       .then((res) => res.json())
       .then((data) => {
         setDoners(data);
