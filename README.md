@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Blood-Care
 
-## Getting Started
+## Short Description
+This is a **[Blood-Care]**, a web application built using **[Tech Stack, Next.js, Node.js, Express, MongoDB]**.  
+It allows users to **[briefly describe main functionality, manage donors, view testimonials, handle authentication, etc.]**.  
+The app includes both **public** and **protected routes** with authentication.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Setup & Installation
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Prerequisites
+- Node.js v18+  
+- npm v9+ or yarn  
+- MongoDB (local or cloud)  
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Installation Steps
+1. Clone the repository:
+   ```bash
+   https://github.com/hamidur800/blood-care-client.git
+   cd blood-care-client
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Route Summary
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Public Routes
+| Route | Method | Description |
+|-------|--------|-------------|
+| `/` | GET | Landing page |
+| `/login` | GET/POST | User login |
+| `/register` | GET/POST | User registration |
+| `/doners` | GET | List all donors |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Protected Routes (Require Authentication)
+| Route | Method | Description |
+|-------|--------|-------------|
+| `/doners/:id` | GET | View single donor details |
+| `/add-doner` | POST | Add a new donor |
