@@ -8,7 +8,7 @@ export default function AllDoners() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/doners")
+    fetch("https://blood-care-server-eight.vercel.app/doners")
       .then((res) => res.json())
       .then((data) => {
         setDoners(data);

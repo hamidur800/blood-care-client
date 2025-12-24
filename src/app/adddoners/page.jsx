@@ -24,7 +24,7 @@ export default function AddDoner() {
       createdAt: new Date(),
     };
 
-    fetch("https://blood-care-server-nine.vercel.app/doners", {
+    fetch("https://blood-care-server-eight.vercel.app/doners", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(donerData),

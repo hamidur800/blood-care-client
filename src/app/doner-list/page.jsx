@@ -29,7 +29,7 @@ export default function page() {
 
     // fetch donors for this user
     fetch(
-      `https://blood-care-server-nine.vercel.app/doners?addedByEmail=${user.email}`
+      `https://blood-care-server-eight.vercel.app/doners?addedByEmail=${user.email}`
     )
       .then((res) => res.json())
       .then((data) => {
